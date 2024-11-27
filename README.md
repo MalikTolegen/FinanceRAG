@@ -95,7 +95,7 @@ bash run.sh
 
 ## 📝 Paper
 
-Discover more in the full paper: [`arxiv`](https://arxiv.org/abs/2411.16732)
+Discover more in the full paper: [`Arxiv`](https://arxiv.org/abs/2411.16732)
 
 ### Abstract
 > As Large Language Models (LLMs) increasingly address domainspecific problems, their application in the financial sector has expanded rapidly. Tasks that are both highly valuable and time-consuming, such as analyzing financial statements, disclosures, and related documents, are now being effectively tackled using LLMs. This paper details the development of a high-performance, finance-specific Retrieval-Augmented Generation (RAG) system for the ACM-ICAIF ’24 FinanceRAG competition. We optimized performance through ablation studies on query expansion and corpus refinement during the pre-retrieval phase. To enhance retrieval accuracy, we employed multiple reranker models. Notably, we introduced an efficient method for managing long context sizes during the generation phase, significantly improving response quality without sacrificing performance. Our key contributions include: (1) preretrieval ablation analysis, (2) an enhanced retrieval algorithm, and (3) a novel approach for long-context management. This work demonstrates the potential of LLMs in effectively processing and analyzing complex financial data to generate accurate and valuable insights. The source code and further details are available at https://github.com/cv-lee/FinanceRAG.
