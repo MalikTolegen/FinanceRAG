@@ -1,7 +1,7 @@
 # FinanceRAG
 
 Implementation of **[FinanceRAG](https://www.kaggle.com/competitions/icaif-24-finance-rag-challenge)**, a Finance specialized Retrieval-Augmented Generation (RAG) system for the **ACM-ICAIF '24 Competition**.
-- **Pre-Retrieval Phase**: Efficient query expansion and corpus refinement techniques to enhance the retrieval process.
+- **Pre-Retrieval Phase**: Efficient query expansion and corpus refinement techniques to enhance the retrieval process. Short paper was uploaded in **[Arxiv](https://arxiv.org/abs/2411.16732)**
 - **Multi-Stage Reranking**: Utilizes multiple reranker models to improve the quality of retrieved documents.
 - **Long-Context Management**: Implements a novel approach for handling long context sizes during llm generation. (not included yet.)
 <br/>
