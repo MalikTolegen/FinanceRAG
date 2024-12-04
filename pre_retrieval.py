@@ -17,6 +17,8 @@ def initialize_llm():
     return model, tokenizer
 
 
+model, tokenizer = initialize_llm()
+
 def clean_text(text):
     """
     Replace all Unicode escape sequences (e.g., \u2019, \u0080) with a space.
