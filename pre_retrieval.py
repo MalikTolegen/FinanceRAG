@@ -19,6 +19,14 @@ def initialize_llm():
 
 model, tokenizer = initialize_llm()
 
+def generate_text(model, tokenizer, prompt):
+    """
+    Use the Hugging Face model to generate text based on the input prompt.
+    """
+    inputs = tokenizer(prompt, return_tensors="pt", truncation=True, padding=True)
+    outputs = model.generate(inputs["input_ids"], max_length=150)
+    return tokenizer.decode(outputs[0], skip_special_tokens=True)
+
 def clean_text(text):
     """
     Replace all Unicode escape sequences (e.g., \u2019, \u0080) with a space.
@@ -120,7 +128,7 @@ def expand_queries(subset, dataset_dir, llm, overwrite=False):
     for item in data:
         item_text = item["text"]
         prompt = f"{prompt_template}\n\nQuery: {item_text}"
-        new_text = llm.invoke(prompt).content
+        new_text = generate_text(model, tokenizer, prompt)
         expanded_queries.append(
             {
                 "_id": item["_id"],
