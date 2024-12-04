@@ -5,7 +5,7 @@ import shutil
 import json
 from pathlib import Path
 from dotenv import load_dotenv
-from langchain_openai import ChatOpenAI
+from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
 
 def clean_text(text):
