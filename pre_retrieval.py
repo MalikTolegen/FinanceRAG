@@ -7,6 +7,15 @@ from pathlib import Path
 from dotenv import load_dotenv
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
+def initialize_llm():
+    """
+    Initialize a Hugging Face model (T5 in this case).
+    """
+    model_name = "t5-small"  # You can change this to any other model like `t5-base`, `t5-large`, etc.
+    tokenizer = AutoTokenizer.from_pretrained(model_name)
+    model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
+    return model, tokenizer
+
 
 def clean_text(text):
     """
