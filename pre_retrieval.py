@@ -158,8 +158,8 @@ def copy_corpus(subset, dataset_dir):
     shutil.copy(from_path, to_path)
 
 def pre_retrieval(dataset_dir):
-    load_dotenv()
-    llm = ChatOpenAI(model="gpt-4o-mini")
+    # Initialize Hugging Face model and tokenizer
+    model, tokenizer = initialize_llm()
 
     subsets = [
         "FinanceBench",
@@ -174,7 +174,7 @@ def pre_retrieval(dataset_dir):
     for subset in subsets:
         try:
             print(f"Pre-retrieval for '{subset}' initiating...")
-            expand_queries(subset, dataset_dir, llm)
+            expand_queries(subset, dataset_dir, model, tokenizer)  # Pass the model and tokenizer to expand_queries
             if subset == "MultiHiertt":
                 compress_corpus(subset, dataset_dir)
             else:
